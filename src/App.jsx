@@ -45,10 +45,18 @@ function App() {
             <div className="relative">
               <button
                 aria-label="Share"
-                className={`bg-[#ecf2f8] p-2 rounded-full transition-colors hover:bg-[#dfe7f3]  cursor-pointer `}
+                className={`p-2 rounded-full transition-colors cursor-pointer ${
+                  showShare
+                    ? "bg-[#48556a] hover:bg-[#48556a]"
+                    : "bg-[#ecf2f8] hover:bg-[#dfe7f3]"
+                }`}
                 onClick={() => setShowShare((v) => !v)}
               >
-                <img src="/images/icon-share.svg" alt="Share" />
+                <img
+                  src="/images/icon-share.svg"
+                  alt="Share"
+                  className={showShare ? "filter brightness-0 invert" : ""}
+                />
               </button>
               {/* Share menu */}
               {showShare && (
